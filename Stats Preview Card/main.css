@@ -1,0 +1,137 @@
+/*!Mobile View*/
+body{
+    background-color: hsl(233, 47%, 7%);
+    font-family: sans-serif;
+}
+.violet{
+    color: hsl(277, 64%, 61%);
+}
+.white{
+    color: white;
+}
+.center{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#container{
+    height: 48em;
+    width: 20em;
+    background-color: hsl(244, 38%, 16%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    /**Grid Section**/
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: 16em 7em 8em 5.5em 5.5em 5.5em;
+    grid-template-areas: 
+    "img"
+    "header"
+    "description"
+    "company"
+    "templates"
+    "queries";
+}
+#layer{
+    width: 20em;
+    height: 14.68em;
+    background-color: hsl(277, 64%, 61%);
+    opacity: 0.5;
+    grid-area: img;
+    z-index: 1;
+    border-radius: 12px 12px 0px 0px;
+}
+#img-header{
+    width: 20em;
+    border-radius: 12px 12px 0px 0px;
+    grid-area: img;
+}
+#header{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 10em;
+    grid-area: header;
+    font-size: 1.7em;
+}
+#description{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 17em;
+    opacity: 0.75;
+    grid-area: description;
+    /*font styling*/
+    word-spacing: 3px;
+    line-height: 25px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+#num-companies{
+    grid-area: company;
+}
+#num-companies p{
+    margin-top: -1em;
+    opacity: 0.75;
+}
+#templates{
+    grid-area: templates;
+}
+#templates p{
+    margin-top: -1em;
+    opacity: 0.75;
+}
+#queries{
+    grid-area: queries;
+}
+#queries p{
+    margin-top: -1em;
+    opacity: 0.75;
+}
+
+/*!Desktop View*/
+@media (min-width: 376px) {
+    #container{
+        width: 100em;
+        height: 30em;
+        /**GRID STARTS HERE*/
+        display: grid;
+        grid-template-columns: 19.7em 19.7em 19.6em 45em;
+        grid-template-rows: 11em 10em 10em;
+        grid-template-areas: 
+        "header header header img"
+        "description description description img"
+        "company templates queries img"; 
+        /**GRID ENDS HERE**/
+    }
+    #img-header{
+        display: inline-block;
+        width: 41em;
+        border-radius: 0px 12px 12px 0px;
+    }
+    #layer{
+        width: 41em;
+        height: 30em;
+        border-radius: 0px 12px 12px 0px;
+    }
+    #header{
+        width: 11em;
+        margin-top: 0.5em;
+        /**FONT*/
+        font-size: 4em;
+        text-align: left;
+    }
+    #description{
+        width: 704px;
+        font-size: 1.9em;
+        text-align: left;
+        line-height: 40px;
+    }
+}
